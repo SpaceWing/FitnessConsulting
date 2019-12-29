@@ -67,42 +67,47 @@ let sendDataToGoogle = (ev) => {
   ev.preventDefault();
   if (validateForm()){
     // 1. Создаём новый объект XMLHttpRequest
-    // let xhr = new XMLHttpRequest();
-    //
-    // // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
-    // xhr.open('GET', `https://script.google.com/macros/s/AKfycbwhBXp00CQODgjxhxoskMFv8p3VAn04NNKA-YSE99QQ7IPwNZpl/exec?p1=${nameField.value}&p2=${phoneField.value}&p3=${emailField.value}&p4=${someShitField.value}`
-    // , false);
-    //
-    // // 3. Отсылаем запрос
+    let xhr = new XMLHttpRequest();
+
+    // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
+    xhr.open('GET', `https://script.google.com/macros/s/AKfycbwhBXp00CQODgjxhxoskMFv8p3VAn04NNKA-YSE99QQ7IPwNZpl/exec?p1=${nameField.value}&p2=${phoneField.value}&p3=${emailField.value}&p4=${someShitField.value}`
+    , false);
+
+    // 3. Отсылаем запрос
 
     showPopUp();
-    // xhr.send();
-    // // 4. Если код ответа сервера не 200, то это ошибка
-    // if (xhr.status != 200) {
-    //   // обработать ошибку
-    //   alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
-    // } else {
-    //   // вывести результат
-    //   alert( xhr.responseText ); // responseText -- текст ответа.
-    // }
+    xhr.send();
+    // 4. Если код ответа сервера не 200, то это ошибка
+    if (xhr.status != 200) {
+      // обработать ошибку
+  //    alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+    } else {
+      // вывести результат
+
+    }
   }
 }
 
 let openHiddenMenu = () =>{
     $("#hidden-menu-container").fadeToggle(200);
     $("#hidden-menu-sub-container").animate({
-      left:"+=200px"
+      left:"+=340px"
     }, 400)
 }
+
 let closeHiddenMenu = () =>{
-  var target = $( event.target );
-	  if ( target.is( "#hidden-menu-container" ) ) {
-      $("#hidden-menu-container").fadeToggle(200);
-      $("#hidden-menu-sub-container").animate({
-        left:"-=200px"
-      }, 400)
-	  }
+  $("#hidden-menu-container").fadeToggle(200);
+  $("#hidden-menu-sub-container").animate({
+      left:"-=340px"
+    }, 400)
 }
+
+let closeHiddenMenuMain = () =>{
+  let target = $( event.target );
+	 if ( target.is( "#hidden-menu-container" ))
+   closeHiddenMenu()
+ }
+
 
 let sendButton = document.getElementById('send-info-button');
 
@@ -112,4 +117,6 @@ popupButton.addEventListener('click', hidePopUp)
 
 $("#conection-item-phone").mask("+7 (999) 999-99-99");
 $("#burger-menu").on("click", openHiddenMenu)
-$("#hidden-menu-container").on("click", closeHiddenMenu)
+$("#hidden-menu-container").on("click", closeHiddenMenuMain)
+$("#hidden-menu-navigation a").on("click", closeHiddenMenu)
+$("#cross-img-hidden-menu").on("click", closeHiddenMenu)
