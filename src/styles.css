@@ -77,7 +77,7 @@ header {
 }
 #burger-menu{
   display: none;
-  margin-top:39px;
+  align-self: center;
   margin-right: 45px;
 
   width: 24px;
@@ -557,6 +557,7 @@ footer{
   margin-right:0px;
 }
 #footer-contact-container{
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -854,6 +855,7 @@ footer{
       justify-content: center;
       height: 85px
   }
+
   #footer-inst-icon-container {
     margin-right: 0;
   }
@@ -1061,7 +1063,7 @@ footer{
 
   #footer-navigation-contact-container{
     flex-direction: column;
-    height: 250px;
+    height: 300px;
   }
   #footer-navigation{
     align-items: center;
