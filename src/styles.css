@@ -722,7 +722,6 @@ footer{
 }
 
 
-@media only screen and (max-width:760px) and (min-width:361px) {
 @media only screen and (max-width:760px) and (min-width:421px) {
   h2{
     margin: 45px 0 30px 0;
@@ -888,18 +887,14 @@ footer{
 
 }
 
-@media only screen and (max-width:360px) {
 @media only screen and (max-width:420px) {
   h2{
-    margin: 45px 0 30px 0;
     margin: 30px 0 30px 0;
   }
   #main-container {
-    min-width: 360px;
     min-width: 414px;
   }
   #company-main-info-container{
-    width: 320px;
     width: 384px;
     padding: 0;
   }
@@ -968,7 +963,6 @@ footer{
     display: none;
   }
   #activity-container{
-    width: 320px;
     width: 384px;
   }
   #list-of-activity li:first-child{
@@ -1001,18 +995,15 @@ footer{
     margin-top: 24px;
   }
   #connection-container{
-    width: 320px;
     width: 384px;
   }
   #service-container{
-    width: 320px;
     width: 384px;
   }
   #service-container h2{
     margin-bottom: 0;
   }
   .service-column-item{
-    width: 320px;
     width: 384px;
     padding-top: 45px;
   }
@@ -1027,18 +1018,15 @@ footer{
 
   #left-connection-column{
     height: 275px;
-    width: 320px;
     width: 384px;
   }
 
   .left-conection-item input{
-    width: 320px;
     width: 384px;
   }
 
   .right-conection-item textarea{
     height: 252px;
-    width: 320px;
     width: 384px;
   }
   #send-info-button{
@@ -1049,7 +1037,6 @@ footer{
   }
   #wrap-text-info-under-button{
     margin: auto;
-    width: 320px;
     width: 384px;
   }
 
