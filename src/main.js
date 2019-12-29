@@ -5,6 +5,8 @@ let phoneField = document.getElementById('conection-item-phone');
 let emailField = document.getElementById('conection-item-email');
 let someShitField = document.getElementById('conection-item-some-shit');
 
+
+
 let showPopUp = () => {
   popupWindow.style.display = "flex";
 }
@@ -14,6 +16,7 @@ let hidePopUp = () => {
 }
 
 let checkName = () => {
+  let a =2;
   if (nameField.value == ""){
     nameField.style.borderColor="red"
     return false;
@@ -53,6 +56,9 @@ let checkPhone = () =>{
 
 
 let validateForm = () =>{
+  checkPhone();
+  checkEmail();
+  checkName();
   let valid = checkPhone() && checkEmail() && checkName();
   return valid;
 }
@@ -80,8 +86,22 @@ let sendDataToGoogle = (ev) => {
     //   alert( xhr.responseText ); // responseText -- текст ответа.
     // }
   }
+}
 
-
+let openHiddenMenu = () =>{
+    $("#hidden-menu-container").fadeToggle(200);
+    $("#hidden-menu-sub-container").animate({
+      left:"+=200px"
+    }, 400)
+}
+let closeHiddenMenu = () =>{
+  var target = $( event.target );
+	  if ( target.is( "#hidden-menu-container" ) ) {
+      $("#hidden-menu-container").fadeToggle(200);
+      $("#hidden-menu-sub-container").animate({
+        left:"-=200px"
+      }, 400)
+	  }
 }
 
 let sendButton = document.getElementById('send-info-button');
@@ -91,3 +111,5 @@ popupButton.addEventListener('click', hidePopUp)
 //phoneField.addEventListener('keydown', checkSymbol)
 
 $("#conection-item-phone").mask("+7 (999) 999-99-99");
+$("#burger-menu").on("click", openHiddenMenu)
+$("#hidden-menu-container").on("click", closeHiddenMenu)
