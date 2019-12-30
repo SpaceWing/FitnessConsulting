@@ -70,7 +70,7 @@ let sendDataToGoogle = (ev) => {
     let xhr = new XMLHttpRequest();
 
     // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
-    xhr.open('GET', `https://script.google.com/macros/s/AKfycbwhBXp00CQODgjxhxoskMFv8p3VAn04NNKA-YSE99QQ7IPwNZpl/exec?p1=${nameField.value}&p2=${phoneField.value}&p3=${emailField.value}&p4=${someShitField.value}`
+    xhr.open('GET', `https://script.google.com/macros/s/AKfycbxXjJs5rgmDNsvUrhl2y2wC3e0KKNwsi94_Yt2ztWoS4LffnnU/exec?p1=${nameField.value}&p2=${phoneField.value}&p3=${emailField.value}&p4=${someShitField.value}`
     , false);
 
     // 3. Отсылаем запрос
