@@ -120,3 +120,19 @@ $("#burger-menu").on("click", openHiddenMenu)
 $("#hidden-menu-container").on("click", closeHiddenMenuMain)
 $("#hidden-menu-navigation a").on("click", closeHiddenMenu)
 $("#cross-img-hidden-menu").on("click", closeHiddenMenu)
+
+
+$(document).ready(function(){
+  $("a").on('click',function(ev){
+    if (this.hash!==""){
+      ev.preventDefault();
+
+      let hash = this.hash;
+      $('html, body').animate({
+        scrollTop:$(hash).offset().top
+      },800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+});
